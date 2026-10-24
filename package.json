@@ -1,0 +1,41 @@
+{
+  "name": "iobroker.danfoss-ecl",
+  "version": "0.1.1",
+  "description": "Danfoss ECL Comfort 200/300 über RS232",
+  "author": "spaceduck",
+  "license": "MIT",
+  "homepage": "https://github.com/spaceduck518/ioBroker.danfoss-ecl",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spaceduck518/ioBroker.danfoss-ecl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spaceduck518/ioBroker.danfoss-ecl/issues"
+  },
+  "keywords": [
+    "ioBroker",
+    "Danfoss",
+    "ECL",
+    "ECL Comfort",
+    "RS232",
+    "heating"
+  ],
+  "main": "main.js",
+  "files": [
+    "admin/",
+    "lib/",
+    "main.js",
+    "io-package.json",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.1.6",
+    "serialport": "^12.0.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  }
+}

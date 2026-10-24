@@ -1,0 +1,121 @@
+{
+  "common": {
+    "name": "danfoss-ecl",
+    "version": "0.1.1",
+    "news": {
+      "0.1.1": {
+        "en": "Installation from GitHub, README updated",
+        "de": "Installation direkt von GitHub, README überarbeitet"
+      },
+      "0.1.0": {
+        "en": "initial version",
+        "de": "Erste Version"
+      }
+    },
+    "title": "Danfoss ECL Comfort",
+    "titleLang": {
+      "en": "Danfoss ECL Comfort 200/300",
+      "de": "Danfoss ECL Comfort 200/300"
+    },
+    "desc": {
+      "en": "Read and control Danfoss ECL Comfort 200/300 heating controllers via RS232",
+      "de": "Danfoss ECL Comfort 200/300 Heizungsregler über RS232 auslesen und steuern"
+    },
+    "authors": [
+      "spaceduck"
+    ],
+    "keywords": [
+      "Danfoss",
+      "ECL",
+      "heating",
+      "RS232"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "danfoss-ecl.png",
+    "extIcon": "https://raw.githubusercontent.com/spaceduck518/ioBroker.danfoss-ecl/main/admin/danfoss-ecl.png",
+    "readme": "https://github.com/spaceduck518/ioBroker.danfoss-ecl/blob/main/README.md",
+    "enabled": true,
+    "messagebox": true,
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "climate-control",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.0"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=6.0.0"
+      }
+    ]
+  },
+  "native": {
+    "port": "/dev/ttyUSB0",
+    "application": "auto",
+    "pollInterval": 15,
+    "weekplanInterval": 24,
+    "hotwaterOffset": 0,
+    "allowEepromWrite": false,
+    "commandGap": 500,
+    "responseTimeout": 1500
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "name": "Verbunden",
+        "type": "boolean",
+        "role": "indicator.connected",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.application",
+      "type": "state",
+      "common": {
+        "name": "Applikation der ECL",
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false,
+        "def": ""
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.lastUpdate",
+      "type": "state",
+      "common": {
+        "name": "Letzte erfolgreiche Abfrage",
+        "type": "number",
+        "role": "date",
+        "read": true,
+        "write": false,
+        "def": 0
+      },
+      "native": {}
+    }
+  ]
+}

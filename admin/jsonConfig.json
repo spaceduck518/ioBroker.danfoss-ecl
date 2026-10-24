@@ -1,0 +1,91 @@
+{
+  "type": "panel",
+  "items": {
+    "port": {
+      "type": "autocompleteSendTo",
+      "command": "listPorts",
+      "freeSolo": true,
+      "label": "Serieller Port",
+      "help": "z.B. /dev/ttyUSB0 – besser /dev/serial/by-id/…, das ändert sich nach einem Neustart nicht",
+      "xs": 12, "sm": 12, "md": 8, "lg": 6
+    },
+    "application": {
+      "type": "select",
+      "label": "Applikation",
+      "help": "Bestimmt die Adressen der applikationsabhängigen Parameter",
+      "options": [
+        { "label": "Automatisch erkennen", "value": "auto" },
+        { "label": "C14", "value": "C14" },
+        { "label": "C25", "value": "C25" },
+        { "label": "C35", "value": "C35" },
+        { "label": "C37", "value": "C37" },
+        { "label": "C47", "value": "C47" },
+        { "label": "C55", "value": "C55" },
+        { "label": "C60", "value": "C60" },
+        { "label": "C62", "value": "C62" },
+        { "label": "C66", "value": "C66" },
+        { "label": "C67", "value": "C67" },
+        { "label": "C75", "value": "C75" },
+        { "label": "P16", "value": "P16" },
+        { "label": "P17", "value": "P17" },
+        { "label": "P20", "value": "P20" },
+        { "label": "P30", "value": "P30" }
+      ],
+      "newLine": true,
+      "xs": 12, "sm": 6, "md": 4, "lg": 3
+    },
+    "pollInterval": {
+      "type": "number",
+      "min": 1,
+      "max": 1440,
+      "label": "Abfrageintervall (Minuten)",
+      "newLine": true,
+      "xs": 12, "sm": 6, "md": 4, "lg": 3
+    },
+    "weekplanInterval": {
+      "type": "number",
+      "min": 1,
+      "max": 168,
+      "label": "Wochenplan lesen alle (Stunden)",
+      "xs": 12, "sm": 6, "md": 4, "lg": 3
+    },
+    "hotwaterOffset": {
+      "type": "number",
+      "min": -50,
+      "max": 50,
+      "label": "Warmwasser-Offset (K)",
+      "help": "Datenpunkt = Wert der ECL minus Offset (z.B. 15: Display 60 = 45 °C)",
+      "newLine": true,
+      "xs": 12, "sm": 6, "md": 4, "lg": 3
+    },
+    "allowEepromWrite": {
+      "type": "checkbox",
+      "label": "Wochenplan schreiben erlauben (EEPROM)",
+      "help": "Schreibt dauerhaft ins EEPROM der ECL",
+      "newLine": true,
+      "xs": 12
+    },
+    "hdrAdvanced": {
+      "type": "header",
+      "text": "Erweitert",
+      "size": 5,
+      "newLine": true
+    },
+    "commandGap": {
+      "type": "number",
+      "min": 400,
+      "max": 5000,
+      "label": "Pause zwischen Kommandos (ms)",
+      "help": "Protokoll: mindestens 400 ms",
+      "newLine": true,
+      "xs": 12, "sm": 6, "md": 4, "lg": 3
+    },
+    "responseTimeout": {
+      "type": "number",
+      "min": 500,
+      "max": 10000,
+      "label": "Antwort-Timeout (ms)",
+      "xs": 12, "sm": 6, "md": 4, "lg": 3
+    }
+  }
+}
